@@ -39,7 +39,7 @@ To get a local copy up and running follow these simple steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 
-- npm
+- yarn
   ```sh
   yarn global add @electron-forge/cli
   ```
@@ -50,7 +50,7 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/kadirgun/private-dns-server
    ```
-2. Install NPM packages
+2. Install packages
    ```sh
    yarn install
    ```
