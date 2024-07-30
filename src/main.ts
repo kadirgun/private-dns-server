@@ -13,6 +13,7 @@ if (require("electron-squirrel-startup")) {
 
 let mainWindow: BrowserWindow | null = null;
 let isQuitting = false;
+const icon = nativeImage.createFromDataURL(logo);
 
 const createWindow = () => {
   // Create the browser window.
@@ -23,6 +24,7 @@ const createWindow = () => {
       preload: path.join(__dirname, "preload.js"),
     },
     autoHideMenuBar: true,
+    icon,
   });
 
   // and load the index.html of the app.
@@ -80,11 +82,9 @@ app.on("activate", () => {
 // code. You can also put them in separate files and import them here.
 let tray = null;
 app.whenReady().then(() => {
-  const icon = nativeImage.createFromDataURL(logo).resize({ width: 16, height: 16 });
-
   tray = new Tray(icon);
   const contextMenu = Menu.buildFromTemplate([
-    { icon: icon, label: "Private DNS Server", enabled: false },
+    { icon: icon.resize({ width: 16, height: 16 }), label: "Private DNS Server", enabled: false },
     { type: "separator" },
     { label: "Open", type: "normal", click: () => mainWindow?.show() },
     { label: "Restart DNS Server", type: "normal" },
