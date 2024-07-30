@@ -14,7 +14,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![Product Name Screen Shot][product-screenshot]
 
 A desktop application that creates a DNS server on the local machine. Through the application, DNS records can be added, and the server responds to queries for those DNS records. If the DNS record is not found in the local records, it falls back to using a user-defined DoH (DNS over HTTPS) query.
 
